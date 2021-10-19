@@ -1,8 +1,32 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Saira:wght@500&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: rgb(255, 152, 0);
+  --color-background-main: rgb(32, 35, 41);
+  --color-background-header: rgb(255, 255, 255);
+  --color-background-card: rgb(60, 62, 68);
+  --color-text-header: rgb(32, 35, 41);
+  --color-text-card-primary: rgb(255, 255, 255);
+  --color-text-card-secondary: rgb(158, 158, 158);
+  --font-family-headline: "Bebas Neue", cursive;
+  --font-family-text: "Saira", sans-serif;
+  --border-radius: 15px;
+}
+
+body {
+  font-family: var(--font-family-text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-family-headline);
 }
