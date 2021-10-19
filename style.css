@@ -8,9 +8,10 @@
 
 :root {
   --color-primary: rgb(255, 152, 0);
-  --color-background-main: rgb(32, 35, 41);
+  --color-background-main: rgb(36, 40, 47);
   --color-background-header: rgb(255, 255, 255);
   --color-background-card: rgb(60, 62, 68);
+  --color-background-footer: rgb(32, 35, 41);
   --color-text-header: rgb(32, 35, 41);
   --color-text-card-primary: rgb(255, 255, 255);
   --color-text-card-secondary: rgb(158, 158, 158);
@@ -21,12 +22,30 @@
 
 body {
   font-family: var(--font-family-text);
+  margin: 0;
+  background-color: var(--color-background-main);
 }
 
 h1,
-h2,
-h3,
-h4,
 h5 {
   font-family: var(--font-family-headline);
+}
+
+.header {
+  background-color: var(--color-background-header);
+  color: var(--color-text-header);
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.main {
+  color: var(--color-text-card-primary);
+  padding: 2rem 2rem;
+  text-align: center;
+}
+
+.footer {
+  background-color: var(--color-background-footer);
+  text-align: center;
+  padding: 4rem;
 }
