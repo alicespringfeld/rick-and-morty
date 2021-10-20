@@ -22,11 +22,13 @@
 
 body {
   font-family: var(--font-family-text);
-  margin: 0;
   background-color: var(--color-background-main);
 }
 
 h1,
+h2,
+h3,
+h4,
 h5 {
   font-family: var(--font-family-headline);
 }
@@ -36,16 +38,23 @@ h5 {
   color: var(--color-text-header);
   text-align: center;
   padding: 4rem 2rem;
+  width: 100vh;
 }
 
 .main {
+  display: grid;
+  row-gap: 1rem;
   color: var(--color-text-card-primary);
+  place-items: center;
   padding: 2rem 2rem;
-  text-align: center;
 }
 
 .footer {
   background-color: var(--color-background-footer);
+  color: var(--te);
   text-align: center;
   padding: 4rem;
+  position: sticky;
+  width: 100vh;
+  height: 1rem;
 }
