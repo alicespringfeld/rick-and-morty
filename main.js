@@ -31,7 +31,7 @@ async function createApp() {
     },
   ];*/
 
-  const characterElement = characters.map((character) =>
+  const characterElements = characters.map((character) =>
     createCharacterComponent(character)
   );
 
