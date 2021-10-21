@@ -48,7 +48,6 @@ export default function createCharacterComponent({
   fetch(firstEpisode)
     .then((response) => response.json())
     .then((body) => {
-      /*console.log(body.name);*/
       firstEpisodeElement.textContent = body.name;
     });
 
