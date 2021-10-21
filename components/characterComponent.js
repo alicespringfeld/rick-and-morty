@@ -42,7 +42,6 @@ export default function createCharacterComponent({
   fetch(lastLocation)
     .then((response) => response.json())
     .then((body) => {
-      /*console.log(body.name);*/
       lastKnownLocationElement.textContent = body.name;
     });
 
