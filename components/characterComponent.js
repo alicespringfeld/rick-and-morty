@@ -42,14 +42,14 @@ export default function createCharacterComponent({
   fetch(lastLocation)
     .then((response) => response.json())
     .then((body) => {
-      console.log(body.name);
+      /*console.log(body.name);*/
       lastKnownLocationElement.textContent = body.name;
     });
 
   fetch(firstEpisode)
     .then((response) => response.json())
     .then((body) => {
-      console.log(body.name);
+      /*console.log(body.name);*/
       firstEpisodeElement.textContent = body.name;
     });
 
