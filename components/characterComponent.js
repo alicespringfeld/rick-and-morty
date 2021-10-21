@@ -5,9 +5,18 @@ export default function createCharacterComponent({
   name,
   image,
   status,
-  race,
+  species,
   location,
+  episode,
 }) {
+  const lastLocation = location[0];
+  const lastKnownLocationElement = createElement("p", {
+    textContent: location.name,
+  });
+
+  const firstEpisode = episode[0];
+  const firstEpisodeElement = createElement("p", { textContent: firstEpisode });
+
   const characterElement = createElement(
     "article",
     {
@@ -19,25 +28,30 @@ export default function createCharacterComponent({
         alt: "",
         className: styles.image,
       }),
-      createElement(
-        "h2",
-        {
-          textContent: name,
-          className: styles.headline,
-        },
-        [
-          createElement("p", { textContent: `${status}- ${race}` }),
-          createElement("h4", {
-            textContent: "Last known location: " + location,
-            className: styles.subhead,
-          }),
-        ]
-      ),
-      /*createElement("h4", {
-        textContent: location,
-        className: styles.subhead,
-      }),*/
+      createElement("h2", {
+        textContent: name,
+        className: styles.headline,
+      }),
+      createElement("p", { textContent: `${status} - ${species}` }),
+      createElement("h4", { textContent: "Last known location: " }),
+      lastKnownLocationElement,
+      createElement("h4", { textContent: "First seen in: " }),
+      firstEpisodeElement,
     ]
   );
+  fetch(lastLocation)
+    .then((response) => response.json())
+    .then((body) => {
+      console.log(body.name);
+      lastKnownLocationElement.textContent = body.name;
+    });
+
+  fetch(firstEpisode)
+    .then((response) => response.json())
+    .then((body) => {
+      console.log(body.name);
+      firstEpisodeElement.textContent = body.name;
+    });
+
   return characterElement;
 }
