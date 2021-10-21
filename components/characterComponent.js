@@ -9,7 +9,7 @@ export default function createCharacterComponent({
   location,
   episode,
 }) {
-  const lastLocation = location[0];
+  /*const lastLocation = location.name;*/
   const lastKnownLocationElement = createElement("p", {
     textContent: location.name,
   });
@@ -39,11 +39,11 @@ export default function createCharacterComponent({
       firstEpisodeElement,
     ]
   );
-  fetch(lastLocation)
+  /*fetch(lastLocation)
     .then((response) => response.json())
     .then((body) => {
       lastKnownLocationElement.textContent = body.name;
-    });
+    });*/
 
   fetch(firstEpisode)
     .then((response) => response.json())
