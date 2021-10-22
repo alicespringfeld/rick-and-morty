@@ -41,6 +41,25 @@ h5 {
   width: 100%;
 }
 
+.searchBar {
+  display: grid;
+  gap: 0.2rem;
+  grid-template-columns: 1fr auto;
+  place-items: end;
+}
+
+input {
+  border-radius: 2rem;
+  font-family: var(--font-family-text);
+}
+
+button {
+  border-radius: 2rem;
+  background-color: var(--color-background-footer);
+  color: rgb(255, 255, 255);
+  font-family: var(--font-family-text);
+}
+
 .main {
   display: grid;
   row-gap: 1rem;

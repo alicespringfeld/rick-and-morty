@@ -5,6 +5,9 @@ export function createHeaderComponent() {
     createElement("h1", {
       textContent: "Rick and Morty",
     }),
+
+    /*createSearchBarComponent(),*/
   ]);
+
   return headerElement;
 }
