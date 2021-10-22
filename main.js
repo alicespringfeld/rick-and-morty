@@ -1,13 +1,31 @@
-import { createElement } from "./lb/elements";
-import { createHeaderComponent } from "./lb/titleComponent";
+import { createElement } from "./lb/elements.js";
+import { createHeaderComponent } from "./lb/titleComponent.js";
 import "./style.css";
-import createCharacterComponent from "./components/characterComponent";
+import createCharacterComponent from "./components/characterComponent.js";
 import { fetchCharacter } from "./lb/fetchCharacters.js";
+import { createSearchBarComponent } from "./lb/createSearchBar.js";
 
 async function createApp() {
   const appElement = document.querySelector("#app");
 
   const headerElement = createHeaderComponent();
+
+  async function handleSubmit(searchQuery) {
+    const response = await fetch(
+      `https://rickandmortyapi.com/api/character/?name=${searchQuery}`
+    );
+    const body = await response.json();
+    const characters = body.results;
+    const characterComponents = characters.map((character) =>
+      createCharacterComponent(character)
+    );
+    console.log(characterComponents);
+    mainElement.innerHTML = "";
+
+    mainElement.append(...characterComponents);
+  }
+
+  const formElement = createSearchBarComponent(handleSubmit);
 
   const characters = await fetchCharacter(
     "https://rickandmortyapi.com/api/character"
@@ -34,6 +52,6 @@ async function createApp() {
       textContent: "footerbar",
     }),
   ]);
-  appElement.append(headerElement, mainElement, footerElement);
+  appElement.append(headerElement, formElement, mainElement, footerElement);
 }
 createApp();
